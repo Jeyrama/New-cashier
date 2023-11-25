@@ -20,3 +20,6 @@ The menu items are fairly simple, there is no overlap in the names of the items:
   7. Milkshake
   8. Coke
 */
+
+
+// Solution
