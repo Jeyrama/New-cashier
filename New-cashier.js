@@ -23,3 +23,17 @@ The menu items are fairly simple, there is no overlap in the names of the items:
 
 
 // Solution
+
+const menu = ["Burger", "Fries", "Tofu", "Pizza", "Sandwich", "Onionrings", "Milkshake", "Coke"];
+
+const getOrder = (input) => {
+  const order = [];
+
+  menu.forEach(food => {
+    const f = food.toLowerCase();
+    for (let i = 0; (i = input.indexOf(f, i)) >= 0; i += f.length)
+      order.push(food);
+  });
+
+  return order.join(' ');
+}
