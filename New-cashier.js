@@ -39,3 +39,30 @@ const getOrder = (input) => {
 }
 
 // or
+
+function getOrder(input) {
+  let menu = ['Burger', 'Fries', 'Chicken', 'Pizza', 'Sandwich', 'Onionrings', 'Milkshake', 'Coke'];
+  return input
+    .split(/(milkshake|pizza|chicken|fries|coke|burger|sandwich|onionrings)/i)
+    .filter(item => item !== '')
+    .map(item => item.slice(0,1).toUpperCase() + item.slice(1).toLowerCase())
+    .sort((a, b) => menu.indexOf(a) > menu.indexOf(b) ? 1 : -1)
+    .join(' ');
+  }
+
+// or
+
+function getOrder(s) {
+  const order = {
+    Burger: 1,
+    Fries: 2,
+    Chicken: 3,
+    Pizza: 4,
+    Sandwich: 5,
+    Onionrings: 6,
+    Milkshake: 7,
+    Coke: 8
+  };
+  return (s.match(/burger|fries|chicken|pizza|sandwich|onionrings|milkshake|coke/g) || [])
+    .map(v => v[0].toUpperCase() + v.slice(1)).sort((a, b) => order[a] - order[b]).join` `;
+}
