@@ -37,3 +37,5 @@ const getOrder = (input) => {
 
   return order.join(' ');
 }
+
+// or
